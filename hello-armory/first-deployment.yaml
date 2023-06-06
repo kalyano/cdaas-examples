@@ -4,11 +4,11 @@ application: potato-facts
 targets:
   staging:
     account: kals-deployment-cluster
-    namespace: kals-deployments
+    namespace: kal-deployments
     strategy: rolling
   prod:
     account: kals-deployment-cluster
-    namespace: kals-deployments-prod
+    namespace: kal-deployments-prod
     strategy: rolling
     constraints:
       dependsOn: ["staging"]
