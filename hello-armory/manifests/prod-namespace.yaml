@@ -1,4 +1,4 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: potato-facts-prod
+  name: kal-deployment-prod
