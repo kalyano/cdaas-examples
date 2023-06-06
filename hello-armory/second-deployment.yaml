@@ -4,11 +4,11 @@ application: potato-facts
 targets:
   staging:
     account: kals-deployment-cluster
-    namespace: kal-deployment
+    namespace: kal-deployments
     strategy: rolling
   prod:
     account: kals-deployment-cluster
-    namespace: kal-deployment-prod
+    namespace: kal-deployments-prod
     strategy: trafficSplit
     constraints:
       dependsOn: ["staging"]
@@ -18,11 +18,11 @@ targets:
 manifests:
   # This tutorial uses URLs to ensure a simple first-time deployment experience.
   # You can also use relative file paths to define manifest locations.
-  - path: https://raw.githubusercontent.com/armory-io/cdaas-examples/main/hello-armory/manifests/potato-facts-v2.yaml
-  - path: https://raw.githubusercontent.com/armory-io/cdaas-examples/main/hello-armory/manifests/potato-facts-service.yaml
-  - path: https://raw.githubusercontent.com/armory-io/cdaas-examples/main/hello-armory/manifests/staging-namespace.yaml
+  - path: https://raw.githubusercontent.com/kalyano/cdaas-examples/main/hello-armory/manifests/potato-facts-v2.yaml
+  - path: https://raw.githubusercontent.com/kalyano/cdaas-examples/main/hello-armory/manifests/potato-facts-service.yaml
+  - path: https://raw.githubusercontent.com/kalyano/cdaas-examples/main/hello-armory/manifests/staging-namespace.yaml
     targets: ["staging"]
-  - path: https://raw.githubusercontent.com/armory-io/cdaas-examples/main/hello-armory/manifests/prod-namespace.yaml
+  - path: https://raw.githubusercontent.com/kalyano/cdaas-examples/main/hello-armory/manifests/prod-namespace.yaml
     targets: ["prod"]
 strategies:
   rolling:
