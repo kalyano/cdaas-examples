@@ -3,12 +3,12 @@ kind: kubernetes
 application: potato-facts
 targets:
   staging:
-    account: my-cdaas-cluster
-    namespace: potato-facts-staging
+    account: kals-deployment-cluster
+    namespace: kal-deployment
     strategy: rolling
   prod:
-    account: my-cdaas-cluster
-    namespace: potato-facts-prod
+    account: kals-deployment-cluster
+    namespace: kal-deployment-prod
     strategy: trafficSplit
     constraints:
       dependsOn: ["staging"]
